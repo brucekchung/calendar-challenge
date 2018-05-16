@@ -16,7 +16,7 @@ class App extends Component {
     }
   }
 
-  //months arg for Date is 1-indexed...
+  //months arg for Date obj is 1-indexed...
   daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate()
   
   componentDidMount() {
@@ -43,7 +43,7 @@ class App extends Component {
       <div className="App">
         {console.log('info: ', this.state)}
         <Header date={ this.state } />
-        <Calendar />
+        <Calendar date={ this.state } />
       </div>
     )
   }
