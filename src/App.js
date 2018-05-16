@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from './Header'
 import './App.css'
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     const today = new Date() 
     const month = this.allMonths[today.getMonth()]
-    const year = today.getYear()
+    const year = today.getFullYear()
 
     this.setState({ 
       currentMonth: month,
@@ -25,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        App
+        <Header date={ this.state } />
         {console.log('month:', this.state.currentMonth)}
         {console.log('year:', this.state.year)}
       </div>
