@@ -12,13 +12,11 @@ class App extends Component {
       nextMonth: '',
       year: '',
       daysInCurrentMonth: '',
-      daysInNextMonth: ''
+      daysInNextMonth: '',
+      firstDay: ''
     }
   }
 
-  //months arg for Date obj is 1-indexed...
-  daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate()
-  
   componentDidMount() {
     const allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const today = new Date() 
@@ -26,15 +24,17 @@ class App extends Component {
     const currentMonth = allMonths[monthNumber]
     const nextMonth = allMonths[monthNumber + 1]
     const year = today.getFullYear()
-    const daysInCurrentMonth = this.daysInMonth(year, monthNumber) 
-    const daysInNextMonth = this.daysInMonth(year, monthNumber + 1)
+    const daysInCurrentMonth = new Date(year, monthNumber + 1, 0).getDate()
+    const daysInNextMonth = new Date(year, monthNumber + 2, 0).getDate()
+    const firstDay = new Date(year, monthNumber, 1).getDay()
 
     this.setState({ 
       currentMonth,
       nextMonth,
       year,
       daysInCurrentMonth,
-      daysInNextMonth
+      daysInNextMonth,
+      firstDay
     })
   }
 
