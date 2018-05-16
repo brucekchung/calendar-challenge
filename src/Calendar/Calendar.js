@@ -5,7 +5,7 @@ import './Calendar.css'
 const Calendar = ({ date }) => {
 
   const eventOnDay = (month, day) => {
-    console.log('events: ', date.events)
+    // console.log('events: ', date.events)
 
     const matches = date.events.filter(event => {
       const eventStart = event.start.split('/')
@@ -22,7 +22,7 @@ const Calendar = ({ date }) => {
       return correctMonth && correctDay()
     })
 
-    console.log('matches: ', matches)
+    // console.log('matches: ', matches)
     return matches
   }
 
@@ -30,18 +30,27 @@ const Calendar = ({ date }) => {
     const allDays = []
 
     for(let i = 0; i < date.firstDay; i++) {
-      allDays.push(<div className="placeholder" key={ i + 'placeholder' }></div>)
+      allDays.push(<div 
+        className="placeholder" 
+        key={ i + 'placeholder' }>
+      </div>)
     }
 
     for(let i = 1; i <= date.daysInCurrentMonth; i++) {
-      allDays.push(<Day dayInMonth={ i } key={ i + date.currentMonth } />)
+      allDays.push(<Day 
+        dayInMonth={ i } 
+        allEvents={ eventOnDay(date.monthNumber, i) }
+        key={ i + date.currentMonth } />)
     }
 
     for(let i = 1; i <= date.daysInNextMonth; i++) {
-      allDays.push(<Day dayInMonth={ i } key={ i + date.nextMonth } />)
+      allDays.push(<Day 
+        dayInMonth={ i } 
+        allEvents={ eventOnDay(date.monthNumber + 1, i) }
+        key={ i + date.nextMonth } />)
     }
 
-    eventOnDay(date.monthNumber, 21)
+    // eventOnDay(date.monthNumber, 19)
     return allDays
   }
 
