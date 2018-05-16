@@ -43,7 +43,7 @@ const Calendar = ({ date, addEvent }) => {
     for(let i = 1; i <= date.daysInNextMonth; i++) {
       allDays.push(<Day 
         dayInMonth={ i } 
-        month={ date.monthNumber }
+        month={ date.monthNumber + 1 }
         allEvents={ eventOnDay(date.monthNumber + 1, i) }
         addEvent={ addEvent }
         key={ i + date.nextMonth } />)
