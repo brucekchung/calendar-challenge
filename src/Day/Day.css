@@ -1,5 +1,10 @@
 .Day {
   border: 1px solid black;
   height: 100px;
-  width: 100px;
+  width: 14.28%;
+  text-align: right;
+}
+
+.Day p {
+  margin: 5px;
 }

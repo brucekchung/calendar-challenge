@@ -7,7 +7,7 @@ const Calendar = ({ date }) => {
     const allDays = []
 
     for(let i = 0; i < date.daysInCurrentMonth; i++) {
-      allDays.push(<Day />)
+      allDays.push(<Day dayInMonth={ i + 1} key={i + date.currentMonth} />)
     }
     
     return allDays
