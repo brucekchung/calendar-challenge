@@ -1,9 +1,21 @@
 import React from 'react'
+import Day from '../Day/Day'
+import './Calendar.css'
 
-const Calendar = () => {
+const Calendar = ({ date }) => {
+  const renderDays = () => {
+    const allDays = []
+
+    for(let i = 0; i < date.daysInCurrentMonth; i++) {
+      allDays.push(<Day />)
+    }
+    
+    return allDays
+  }
+
   return (
     <div className="Calendar">
-      I'm a Calendar
+      { renderDays() }
     </div>
   )
 }

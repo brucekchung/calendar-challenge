@@ -1,0 +1,4 @@
+.Calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
