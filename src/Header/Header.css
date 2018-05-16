@@ -1,0 +1,8 @@
+.Header {
+  border: 1px solid black;
+  color: blue;
+}
+
+.Header span {
+  margin: 5px;
+}
