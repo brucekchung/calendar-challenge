@@ -7,6 +7,10 @@ const Calendar = ({ date }) => {
   const renderDays = () => {
     const allDays = []
 
+    for(let i = 0; i < date.firstDay; i++) {
+      allDays.push(<div className="placeholder" key={ i + 'placeholder' }></div>)
+    }
+
     for(let i = 1; i <= date.daysInCurrentMonth; i++) {
       allDays.push(<Day dayInMonth={ i } key={ i + date.currentMonth } />)
     }

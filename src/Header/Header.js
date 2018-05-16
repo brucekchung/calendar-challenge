@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = ({ date }) => {
   const allDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  const dayHeader = () => allDays.map(day => <li>{ day }</li>)
+  const dayHeader = () => allDays.map((day, i) => <li key={ i + 'day' }>{ day }</li>)
 
   return (
     <div className="Header">

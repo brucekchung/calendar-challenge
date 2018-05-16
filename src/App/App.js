@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from '../Header/Header'
 import Calendar from '../Calendar/Calendar'
 import './App.css'
+import { events } from '../mockEvents'
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class App extends Component {
       year: '',
       daysInCurrentMonth: '',
       daysInNextMonth: '',
-      firstDay: ''
+      firstDay: '',
+      events: ''
     }
   }
 
@@ -34,7 +36,8 @@ class App extends Component {
       year,
       daysInCurrentMonth,
       daysInNextMonth,
-      firstDay
+      firstDay,
+      events
     })
   }
 

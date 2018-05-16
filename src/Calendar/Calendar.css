@@ -2,3 +2,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.placeholder {
+  height: 100px;
+  width: 14.28%;
+  background: #F2F1EF;
+}
