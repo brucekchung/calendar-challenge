@@ -1,9 +1,9 @@
 import React from 'react'
 import './Day.css'
 
-const Day = () => (
+const Day = ({ dayInMonth }) => (
   <div className="Day">
-    I'm a day
+    <p>{ dayInMonth }</p> 
   </div>
 )
 
