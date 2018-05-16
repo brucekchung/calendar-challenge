@@ -42,13 +42,20 @@ class App extends Component {
       events
     })
   }
+  
+  addEvent = (day, month) => {
+    const name = prompt('Please enter the event name')
+    const date = `${month + 1}/${day}/2018`
+    const eventToAdd = { name, start: date, end: date } 
+
+    this.setState({ events: [...this.state.events, eventToAdd] }) 
+  }
 
   render() {
     return (
       <div className="App">
-        {console.log('info: ', this.state)}
         <Header date={ this.state } />
-        <Calendar date={ this.state } />
+        <Calendar date={ this.state } addEvent={ this.addEvent }/>
       </div>
     )
   }
