@@ -8,3 +8,9 @@
 .Day p {
   margin: 5px;
 }
+
+.Day h5 {
+  background: #BE90D4;
+  margin: 5px;
+  text-align: center;
+}
