@@ -4,6 +4,28 @@ import './Calendar.css'
 
 const Calendar = ({ date }) => {
 
+  const eventOnDay = (month, day) => {
+    console.log('events: ', date.events)
+
+    const matches = date.events.filter(event => {
+      const eventStart = event.start.split('/')
+      const eventEnd = event.end.split('/')
+      const correctMonth = eventStart[0] - 1 === month ? true : false
+      const correctDay = () => {
+        if (eventStart[1] <= day && day <= eventEnd[1]) {
+          return true
+        } else {
+          return false
+        }
+      }
+       
+      return correctMonth && correctDay()
+    })
+
+    console.log('matches: ', matches)
+    return matches
+  }
+
   const renderDays = () => {
     const allDays = []
 
@@ -19,6 +41,7 @@ const Calendar = ({ date }) => {
       allDays.push(<Day dayInMonth={ i } key={ i + date.nextMonth } />)
     }
 
+    eventOnDay(date.monthNumber, 21)
     return allDays
   }
 

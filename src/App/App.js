@@ -9,13 +9,14 @@ class App extends Component {
     super(props)
 
     this.state = {
+      monthNumber: '',
       currentMonth: '',
       nextMonth: '',
       year: '',
       daysInCurrentMonth: '',
       daysInNextMonth: '',
       firstDay: '',
-      events: ''
+      events: [] 
     }
   }
 
@@ -31,6 +32,7 @@ class App extends Component {
     const firstDay = new Date(year, monthNumber, 1).getDay()
 
     this.setState({ 
+      monthNumber,
       currentMonth,
       nextMonth,
       year,
